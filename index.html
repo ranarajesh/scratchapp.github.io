@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"">
+</head>
+<body>
+<div class="page">
+    <!doctype html>
+    <title>Example</title>
+    <style>
+    
+    </style>
+    
+    <main class="grid">
+        <article id="0">
+            <img src="robo1.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="1">
+            <img src="robo2.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="2">
+            <img src="robo3.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="3">
+            <img src="robo4.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="4">
+            <img src="robo5.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="5">
+            <img src="robo6.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="6">
+            <img src="robo7.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="7">
+            <img src="robo8.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="8">
+            <img src="robo9.jpeg" alt="Sample photo">
+            
+          </article>
+          <article id="9">
+            <img src="robo10.jpeg" alt="Sample photo">
+            
+          </article>
+          
+    </main>
+    
+  </div>
+  <script>
+      (function(){
+        const articles = document.getElementsByTagName('article');
+        for (var i = 0; i < articles.length; i++) {
+            articles[i].addEventListener('click',redirect,false);
+        }
+        const urlParams = new URLSearchParams(location.search);
+
+        for (const [key, value] of urlParams) {
+            console.log(`${key}:${value}`);
+            if(value){
+                console.log("value of value", value);
+                localStorage.setItem('redeem', true);
+            }
+        }
+        function redirect(ev){
+            if(localStorage.getItem('redeem')!='false'){
+                localStorage.setItem('redeem', false);
+            location.href = `test.html?id=${ev.target.parentNode.id}`;
+            }
+            
+
+        }
+
+        
+  
+      })()
+  </script>
+</body>
+</html>
